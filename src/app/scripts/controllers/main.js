@@ -9,7 +9,7 @@
  */
 angular.module('kamaydApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
+    $scope.skills = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
