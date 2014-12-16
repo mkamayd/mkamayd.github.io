@@ -332,7 +332,15 @@ module.exports = function (grunt) {
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
-        files: [{
+        files: [
+            {
+                expand: true,
+                cwd: '.',
+                flatten: true,
+                dest: '<%= yeoman.dist %>/fonts',
+                src: 'bower_components/76d-social-icons/assets/fonts/*'
+            },
+            {
           expand: true,
           dot: true,
           cwd: '<%= yeoman.app %>',
@@ -353,10 +361,7 @@ module.exports = function (grunt) {
         }, {
           expand: true,
           cwd: '.',
-          src: [
-              'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
-              'bower_components/76d-social-icons/assets/fonts/*'
-          ],
+          src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
           dest: '<%= yeoman.dist %>'
         }]
       },
