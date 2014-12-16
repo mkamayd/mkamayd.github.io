@@ -23,9 +23,15 @@ angular
             url: '/',
             templateUrl: 'views/main.html',
             controller: 'MainCtrl'
-            }).state('about', {
+            })
+            .state('skills', {
+                url: '/skills',
+                templateUrl: 'views/skills.html'
+            })
+            .state('about', {
                 url: '/about',
                 templateUrl: 'views/about.html'
-            });
+            })
+        ;
         $urlRouterProvider.otherwise('/');
     });
