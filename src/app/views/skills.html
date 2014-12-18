@@ -12,12 +12,13 @@
                     <div ng-repeat="category in categories">
                         <h4>{{category.name}}</h4>
                         <ul class="nav nav-pills nav-stacked">
-                            <li ng-class="{active: skill === selectedSkill}" ng-repeat="skill in category.skills | filter: skillFilter">
+                            <li ng-class="{active: skill === selectedSkill}" ng-repeat="skill in filteredSkills = (category.skills | filter: skillFilter)">
                                 <a ng-click="selectSkill(skill)">
                                     <span ng-show="skill.weapon" class="glyphicon glyphicon-screenshot"></span>
                                     {{skill.name}}
                                 </a>
                             </li>
+                            <p ng-hide="filteredSkills.length" class="text-center">No element to show.</p>
                         </ul>
                     </div>
                 </div>
