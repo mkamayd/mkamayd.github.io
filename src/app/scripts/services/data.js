@@ -3,8 +3,7 @@
 
 angular.module('kamaydApp')
     .factory('data', function data() {
-        function Skill(name, url, info, isWeaponOfChoice)
-        {
+        function Skill(name, url, info, isWeaponOfChoice){
             this.name = name;
             this.url = url;
             this.info = info;
@@ -25,13 +24,13 @@ angular.module('kamaydApp')
                 this.category = category;
             }
         };
-        function Project(name, skills, startDate, members, description)
-        {
+        function Project(name, skills, startDate, members, description, url){
             this.name = name;
             this.skills = skills;
             this.startDate = startDate;
             this.members = members || [];
             this.description = description;
+            this.url = url;
 
             //team members and company
             var thisProject = this;
@@ -40,8 +39,7 @@ angular.module('kamaydApp')
                 }
             );
         }
-        function Category(name, skills)
-        {
+        function Category(name, skills){
             this.name = name;
             this.skills = skills;
             var thisCategory = this;
@@ -73,8 +71,7 @@ angular.module('kamaydApp')
             svn = new Skill('SVN', 'http://subversion.apache.org/', 'A version control system.'),
             git = new Skill('GIT', 'http://git-scm.com/', 'A Distributed version control system.', true),
 
-            wpf = new Skill('WPF', 'http://msdn.microsoft.com/en-us/library/aa970268(v=vs.110).aspx','Windows Presentation Foundation is a .Net presentation system for building Windows applications.')
-            ;
+            wpf = new Skill('WPF', 'http://msdn.microsoft.com/en-us/library/aa970268(v=vs.110).aspx','Windows Presentation Foundation is a .Net presentation system for building Windows applications.');
         //members
         var miguel = new Person('Miguel Gutierrez Kamayd', 'Senior Software Developer', 'migue' , 'https://www.linkedin.com/in/miguelgutierrezkamayd'),
             catherine = new Person('Catherine Keble', 'Lead Systems Tester', 'catherine', 'https://www.linkedin.com/pub/catherine-keble/0/747/615'),
@@ -86,8 +83,10 @@ angular.module('kamaydApp')
             simon = new Person('Simon Bill', 'Lead Developer', 'simon', 'https://www.linkedin.com/pub/simon-bill/12/6b/b92');
         //projects
         var projects = [
-            new Project('WordWatch v5', [angular, grunt, bower, npm, nancy], moment('2014-3-1'), [miguel]),
-            new Project('CODES', [aspnet],moment('2012-10-1'),[miguel, catherine], 'Tailored recording applications relevant to the police and associated law enforcement agencies, Business Systems have developed the next generation of interview and evidence recording technology, incorporating digital audio and video - suitable for those organisations which require secure and accurate evidence as part of their interview process.')
+            new Project('WordWatch v5', [angular, grunt, bower, npm, sass, nancy, postgres, git], moment('2014-3-1'), [miguel, garth, simon, dan, tom, catherine, ahmed], 'Latest digital call recording platform from BSL'),
+            new Project('Digivoice', [angular, redis, git], moment('2012-11-1'), [miguel, garth, dan, catherine], 'This digital call recording platform provides an objective record of inbound and outbound phone activity which can be used to develop your team’s telephone communication skills.  It helps to identify areas where there is a clear training or coaching need as well as assessing the effectiveness of the system as a whole.','https://www.digivoice.co.uk'),
+            new Project('CODES', [aspnet, wpf, sql, svn], moment('2012-10-1'),[miguel, catherine], 'Tailored recording applications relevant to the police and associated law enforcement agencies, Business Systems have developed the next generation of interview and evidence recording technology, incorporating digital audio and video - suitable for those organisations which require secure and accurate evidence as part of their interview process.'),
+            new Project('Callcraft', [sql, svn], moment('2013-1-1'), [miguel, garth, dan, ro, catherine], 'OPEX Callcraft provides hosted telephony applications for general businesses and contact centres thereby relieving you of the need to install and maintain expensive capital equipment on your own premises.','http://www.opexhosting.co.uk/')
         ];
         //categories
         var categories = [
