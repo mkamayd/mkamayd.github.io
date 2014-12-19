@@ -81,7 +81,9 @@
                                 </a>
                             </div>
                         </p>
-                        <a class="si-square si-medium si-colored" ng-repeat="social in company.socialLinks" ng-class="social.className" ng-href="{{social.url}}"></a>
+                        <div class="pull-right">
+                            <a class="si-square si-medium si-colored" ng-repeat="social in company.socialLinks" ng-class="social.className" ng-href="{{social.url}}"></a>
+                        </div>
                     </div>
                 </div>
 
