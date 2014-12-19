@@ -19,12 +19,14 @@
 
                         <p ng-show="selectedProject.skills.length">
                             Skill I have used in {{selectedProject.name}}
-                            <div class="btn-group">
-                                <a ng-repeat="skill in selectedProject.skills" class="btn btn-default btn-xs" ui-sref="skills({selected:skill.name})">
-                                    <span ng-show="skill.weapon" class="glyphicon glyphicon-screenshot"></span>
-                                    {{skill.name}}
-                                </a>
-                            </div>
+                            <center>
+                                <div class="btn-group">
+                                    <a ng-repeat="skill in selectedProject.skills" class="btn btn-default btn-xs" ui-sref="skills({selected:skill.name})">
+                                        <span ng-show="skill.weapon" class="glyphicon glyphicon-screenshot"></span>
+                                        {{skill.name}}
+                                    </a>
+                                </div>
+                            </center>
                         </p>
                         <p ng-show="selectedProject.members.length">
                             Team members:
