@@ -16,11 +16,17 @@ angular
             })
             .state('skills', {
                 url: '/skills',
+                params: {
+                    selected: { value: "Angular JS" }
+                },
                 controller: 'SkillsCtrl',
                 templateUrl: 'views/skills.html'
             })
             .state('projects', {
                 url: '/projects',
+                params: {
+                    selected: { value: "WordWatch v5" }
+                },
                 controller: 'ProjectsCtrl',
                 templateUrl: 'views/projects.html'
             })

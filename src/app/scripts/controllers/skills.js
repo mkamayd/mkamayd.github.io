@@ -1,9 +1,8 @@
 'use strict';
 angular.module('kamaydApp')
-  .controller('SkillsCtrl', function ($scope, data) {
+  .controller('SkillsCtrl', function ($scope, data, $stateParams) {
      $scope.categories = data.getCategories();
-     $scope.selectedSkill = $scope.categories[0].skills[0];
-
+     $scope.selectedSkill = data.findSkill($stateParams.selected) || $scope.categories[0].skills[0];
      $scope.selectSkill = function(skill){
          if($scope.selectedSkill === skill){
              $scope.selectedSkill = null;

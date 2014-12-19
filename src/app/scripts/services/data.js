@@ -112,6 +112,12 @@ angular.module('kamaydApp')
             },
             getCategories: function () {
                 return categories;
+            },
+            findSkill:function(name){
+                return _.find(skills, {'name': name});
+            },
+            findProject:function(name){
+                return _.find(projects, {'name': name});
             }
         };
         return service;

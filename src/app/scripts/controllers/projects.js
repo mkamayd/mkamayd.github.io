@@ -1,8 +1,8 @@
 'use strict';
 angular.module('kamaydApp')
-  .controller('ProjectsCtrl', function ($scope, data) {
+  .controller('ProjectsCtrl', function ($scope, data, $stateParams) {
      $scope.projects = data.getProjects();
-     $scope.selectedProject = $scope.projects[0];
+     $scope.selectedProject = data.findProject($stateParams.selected) || $scope.projects[0];
 
      $scope.selectProject = function(project){
          if($scope.selectedProject === project){
