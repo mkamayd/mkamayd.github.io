@@ -4,9 +4,14 @@ angular.module('kamaydApp')
      $scope.skills = data.getSkills();
      $scope.categories = data.getCategories();
      $scope.projects = data.getProjects();
+     $scope.selectedSkill = $scope.skills[0];
 
      $scope.selectSkill = function(skill){
-         $scope.selectedSkill = skill;
+         if($scope.selectedSkill === skill){
+             $scope.selectedSkill = null;
+         }
+         else {$scope.selectedSkill = skill;
+         }
      };
 
      $scope.filter = {
