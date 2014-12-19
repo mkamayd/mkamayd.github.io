@@ -11,13 +11,15 @@ angular
   .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('home', {
-            url: '/',
-            templateUrl: 'views/main.html'
+                url: '/',
+                controller: 'HomeCtrl',
+                templateUrl: 'views/main.html'
+
             })
             .state('skills', {
                 url: '/skills',
                 params: {
-                    selected: { value: "Angular JS" }
+                    selected: { value: 'Angular JS' }
                 },
                 controller: 'SkillsCtrl',
                 templateUrl: 'views/skills.html'
@@ -25,7 +27,7 @@ angular
             .state('projects', {
                 url: '/projects',
                 params: {
-                    selected: { value: "WordWatch v5" }
+                    selected: { value: 'WordWatch v5' }
                 },
                 controller: 'ProjectsCtrl',
                 templateUrl: 'views/projects.html'

@@ -4,9 +4,37 @@
 angular.module('kamaydApp')
     .factory('data', function data() {
         function m(date){
-            return moment(date, "DD-MM-YYYY");
+            return moment(date, 'DD-MM-YYYY');
         }
-
+        function ImgLink(className, url){
+            this.className = className;
+            this.url = url;
+        }
+        function Category(name, skills){
+            this.name = name;
+            this.skills = skills;
+            var thisCategory = this;
+            _(skills).forEach(function(skill) {
+                    skill.changeCategory(thisCategory);
+                }
+            );
+        }
+        function Company(name, shortName, location, startDate, endDate, role, url, socialLinks, projects){
+            this.name = name;
+            this.shortName = shortName;
+            this.location = location;
+            this.startDate = startDate;
+            this.endDate = endDate;
+            this.role = role;
+            this.url = url;
+            this.socialLinks = socialLinks;
+            var thisCompany = this;
+            this.projects = projects;
+            _(projects).forEach(function(project) {
+                    project.setCompany(thisCompany);
+                }
+            );
+        }
         function Skill(name, url, info, isWeaponOfChoice){
             this.name = name;
             this.url = url;
@@ -53,34 +81,14 @@ angular.module('kamaydApp')
                 this.company = company;
             }
         };
-        function Category(name, skills){
-            this.name = name;
-            this.skills = skills;
-            var thisCategory = this;
-            _(skills).forEach(function(skill) {
-                    skill.changeCategory(thisCategory);
-                }
-            );
-        }
+
         function Person(name, title , shortName, linkedInURL){
             this.name = name;
             this.title = title;
             this.shortName = shortName || 'person';
             this.linkedInURL = linkedInURL;
         }
-        function Company(name, shortName, location, startDate, endDate, projects){
-            this.name = name;
-            this.shortName = shortName;
-            this.location = location;
-            this.startDate = service;
-            this.endDate = service;
-            var thisCompany = this;
-            this.projects = projects;
-            _(projects).forEach(function(project) {
-                    project.setCompany(thisCompany);
-                }
-            );
-        }
+
         //skills
         var angular = new Skill('AngularJS', 'https://angularjs.org/', 'Angular is what HTML would have been had it been designed for applications', true),
             grunt = new Skill('Grunt', 'http://gruntjs.com/', 'The JavaScript Task Runner' , true),
@@ -124,7 +132,9 @@ angular.module('kamaydApp')
             new Category('Version control', [git, svn])
         ];
         //companies
-        var companies = [ new Company('Business Systems','BSL', 'London, United Kingdom', m('19-03-2013'), m('2-01-2015'), projects)];
+        var companies = [
+            new Company('Business Systems', 'BSL', 'London, United Kingdom', m('19-03-2013'), m('2-01-2015'), 'Senior Software Developer', 'http://www.businesssystemsuk.co.uk/', [new ImgLink('si-linkedin', 'https://www.linkedin.com/company/business-systems-uk-ltd'), new ImgLink('si-twitter','https://twitter.com/BSLHQ'), new ImgLink('si-facebook', 'https://www.facebook.com/businessystemsuk')],  projects)
+        ];
 
         var skills = [  angular, grunt, bower, sass, npm,
                         nancy, aspnet,
