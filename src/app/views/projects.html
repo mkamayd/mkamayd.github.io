@@ -28,7 +28,13 @@
                         </p>
                         <p ng-show="selectedProject.members.length">
                             Team members:
-                            <ul class="media-list">
+                            <a ng-click="showMembers=true" ng-hide="showMembers">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                            </a>
+                            <a ng-click="showMembers=false" ng-show="showMembers">
+                                <span class="glyphicon glyphicon-eye-close"></span>
+                            </a>
+                            <ul ng-show="showMembers" class="media-list">
                                 <li class="media" ng-repeat="person in selectedProject.members">
                                     <span class="pull-left">
                                         <img class="media-object" id="{{person.shortName}}" alt="{{person.shortName}}'s picture.">
