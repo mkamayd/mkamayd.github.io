@@ -70,6 +70,10 @@
                             </a>
                         </p>
                         <p>
+                            <span class="glyphicon glyphicon-map-marker"></span>
+                            {{company.location}}
+                        </p>
+                        <p>
                             <strong>My Projects at {{company.name}}</strong>
                             <div class="btn-group">
                                 <a ng-repeat="project in company.projects" class="btn btn-default btn-xs" ui-sref="projects({selected:project.name})">
