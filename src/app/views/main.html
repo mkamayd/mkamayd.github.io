@@ -45,12 +45,28 @@
                 </div>
             </div>
             <p>Professional, highly qualified and passionate Senior Software Developer based in London. Strong hands-on experience in software applications design and development using Microsoft and other tools, web technologies, TDD and Design Patterns. Self motivated with good problems-solving skills and fast learning abilities, used to developing quality software under strict deadlines.</p>
-            <strong>My Skills</strong>
-            <div class="btn-group">
-                <a ng-repeat="skill in skills" class="btn btn-default btn-xs" ui-sref="skills({selected:skill.name})">
-                    {{skill.name}}
-                </a>
-            </div>
+            <p>
+                <strong>My Weapons of Choice
+                    <span class="glyphicon glyphicon-screenshot"></span>
+                </strong>
+                <center>
+                    <div class="btn-group">
+                        <a ng-repeat="skill in skills|filter:{weapon:true}" class="btn btn-default btn-xs" ui-sref="skills({selected:skill.name})">
+                            {{skill.name}}
+                        </a>
+                    </div>
+                </center>
+            </p>
+            <p>
+                <strong>Others Skills</strong>
+                <center>
+                    <div class="btn-group">
+                        <a ng-repeat="skill in skills|filter:{weapon:false}" class="btn btn-default btn-xs" ui-sref="skills({selected:skill.name})">
+                            {{skill.name}}
+                        </a>
+                    </div>
+                </center>
+            </p>
         </div>
     </div>
     <div class="panel panel-primary">
@@ -86,7 +102,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
