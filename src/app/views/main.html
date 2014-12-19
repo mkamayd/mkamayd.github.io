@@ -91,11 +91,13 @@
                         </p>
                         <p>
                             <strong>My Projects at {{company.name}}</strong>
-                            <div class="btn-group">
-                                <a ng-repeat="project in company.projects" class="btn btn-default btn-xs" ui-sref="projects({selected:project.name})">
-                                    {{project.name}}
-                                </a>
-                            </div>
+                            <center>
+                                <div class="btn-group">
+                                    <a ng-repeat="project in company.projects" class="btn btn-default btn-xs" ui-sref="projects({selected:project.name})">
+                                        {{project.name}}
+                                    </a>
+                                </div>
+                            </center>
                         </p>
                         <div class="pull-right">
                             <a class="si-square si-medium si-colored" ng-repeat="social in company.socialLinks" ng-class="social.className" ng-href="{{social.url}}"></a>
