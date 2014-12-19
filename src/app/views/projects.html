@@ -13,7 +13,7 @@
                         <h3>
                             {{selectedProject.name}}
                         </h3>
-                        <h4>Project Started at {{selectedProject.startDate.format('MMM  YYYY')}}.</h4>
+                        <h4>Project Started at {{selectedProject.startDate.format('MMMM  YYYY')}}.</h4>
                         <p>{{selectedProject.description}}</p>
                         <p ng-show="selectedProject.url">External info about {{selectedProject.name}} can be found <a ng-href="{{selectedProject.url}}">here</a>.</p>
 
