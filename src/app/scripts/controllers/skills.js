@@ -1,10 +1,8 @@
 'use strict';
 angular.module('kamaydApp')
-  .controller('MainCtrl', function ($scope, data) {
-     $scope.skills = data.getSkills();
+  .controller('SkillsCtrl', function ($scope, data) {
      $scope.categories = data.getCategories();
-     $scope.projects = data.getProjects();
-     $scope.selectedSkill = $scope.skills[0];
+     $scope.selectedSkill = $scope.categories[0].skills[0];
 
      $scope.selectSkill = function(skill){
          if($scope.selectedSkill === skill){
@@ -13,12 +11,10 @@ angular.module('kamaydApp')
          else {$scope.selectedSkill = skill;
          }
      };
-
      $scope.filter = {
          onlyWeapons : true
      };
-
-     $scope.skillFilter = function(value, index){
+     $scope.skillFilter = function(value){
          if($scope.filter.onlyWeapons)
          {
              return value.weapon;

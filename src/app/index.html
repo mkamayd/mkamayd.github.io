@@ -58,6 +58,7 @@
                       <ul class="nav navbar-nav">
                           <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
                           <li ui-sref-active="active"><a ui-sref="skills">Skills</a></li>
+                          <li ui-sref-active="active"><a ui-sref="projects">Projects</a></li>
                           <li ui-sref-active="active"><a ui-sref="about">About</a></li>
                       </ul>
                   </div><!-- /.navbar-collapse -->
@@ -127,12 +128,14 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/skills.js"></script>
+        <script src="scripts/controllers/projects.js"></script>
         <script src="scripts/services/data.js"></script>
         <!-- endbuild -->
 </body>

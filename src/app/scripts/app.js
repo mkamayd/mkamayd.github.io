@@ -16,8 +16,13 @@ angular
             })
             .state('skills', {
                 url: '/skills',
-                controller: 'MainCtrl',
+                controller: 'SkillsCtrl',
                 templateUrl: 'views/skills.html'
+            })
+            .state('projects', {
+                url: '/projects',
+                controller: 'ProjectsCtrl',
+                templateUrl: 'views/projects.html'
             })
             .state('about', {
                 url: '/about',

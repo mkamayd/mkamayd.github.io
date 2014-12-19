@@ -1,5 +1,5 @@
 'use strict';
-/* globals _ */
+/* globals _, moment*/
 
 angular.module('kamaydApp')
     .factory('data', function data() {
@@ -25,10 +25,15 @@ angular.module('kamaydApp')
                 this.category = category;
             }
         };
-        function Project(name, skills)
+        function Project(name, skills, startDate, members, description)
         {
             this.name = name;
             this.skills = skills;
+            this.startDate = startDate;
+            this.members = members || [];
+            this.description = description;
+
+            //team members and company
             var thisProject = this;
             _(skills).forEach(function(skill) {
                     skill.addProject(thisProject);
@@ -44,6 +49,12 @@ angular.module('kamaydApp')
                     skill.changeCategory(thisCategory);
                 }
             );
+        }
+        function Person(name, title , shortName, linkedInURL){
+            this.name = name;
+            this.title = title;
+            this.shortName = shortName || 'person';
+            this.linkedInURL = linkedInURL;
         }
         //skills
         var angular = new Skill('AngularJS', 'https://angularjs.org/', 'Angular is what HTML would have been had it been designed for applications', true),
@@ -64,11 +75,19 @@ angular.module('kamaydApp')
 
             wpf = new Skill('WPF', 'http://msdn.microsoft.com/en-us/library/aa970268(v=vs.110).aspx','Windows Presentation Foundation is a .Net presentation system for building Windows applications.')
             ;
-
+        //members
+        var miguel = new Person('Miguel Gutierrez Kamayd', 'Senior Software Developer', 'migue' , 'https://www.linkedin.com/in/miguelgutierrezkamayd'),
+            catherine = new Person('Catherine Keble', 'Lead Systems Tester', 'catherine', 'https://www.linkedin.com/pub/catherine-keble/0/747/615'),
+            garth = new Person('Garth Hinkel', 'Software Development Manager', 'garth', 'https://www.linkedin.com/in/garthhinkel'),
+            dan = new Person('Dan Barua', 'Lead Developer', 'dan', 'https://www.linkedin.com/pub/dan-barua/30/442/89'),
+            ahmed = new Person('Ahmed Yaslem', 'Systems Tester', 'ahmed', 'https://www.linkedin.com/in/ayaslem'),
+            tom = new Person('Thomas Mutton', 'Software Developer', 'tom', 'https://www.linkedin.com/in/tmutton1'),
+            ro = new Person('Rohan Mohindra', 'Inside Pre-Sales Consultant', 'ro', 'https://www.linkedin.com/pub/rohan-mohindra/37/7a9/890'),
+            simon = new Person('Simon Bill', 'Lead Developer', 'simon', 'https://www.linkedin.com/pub/simon-bill/12/6b/b92');
         //projects
         var projects = [
-            new Project('ww5', [angular, grunt, bower, npm, nancy]),
-            new Project('CODES', [aspnet])
+            new Project('WordWatch v5', [angular, grunt, bower, npm, nancy], moment('2014-3-1'), [miguel]),
+            new Project('CODES', [aspnet],moment('2012-10-1'),[miguel, catherine], 'Tailored recording applications relevant to the police and associated law enforcement agencies, Business Systems have developed the next generation of interview and evidence recording technology, incorporating digital audio and video - suitable for those organisations which require secure and accurate evidence as part of their interview process.')
         ];
         //categories
         var categories = [
