@@ -42,9 +42,14 @@ angular.module('kamaydApp')
             this.weapon = isWeaponOfChoice || false;
             this.projects = [];
             this.category = this.emptyCategory;
+            if(!_.contains(this.all, this))
+            {
+                this.all.push(this);
+            }
         }
         Skill.prototype = {
             emptyCategory : new Category('', []),
+            all:[],
             addProject: function(project)
             {
                 if(!_.contains(this.projects, project))
@@ -73,9 +78,14 @@ angular.module('kamaydApp')
                     skill.addProject(thisProject);
                 }
             );
+            if(!_.contains(this.all, this))
+            {
+                this.all.push(this);
+            }
         }
         Project.prototype = {
             emptyCompany : new Company('', '', '', null, null),
+            all:[],
             setCompany: function(company)
             {
                 this.company = company;
@@ -117,7 +127,7 @@ angular.module('kamaydApp')
             ro = new Person('Rohan Mohindra', 'Inside Pre-Sales Consultant', 'ro', 'https://www.linkedin.com/pub/rohan-mohindra/37/7a9/890'),
             simon = new Person('Simon Bill', 'Lead Developer', 'simon', 'https://www.linkedin.com/pub/simon-bill/12/6b/b92');
         //projects
-        var projects = [
+        var projectsBSL = [
             new Project('WordWatch v5', [angular, grunt, bower, npm, sass, nancy, postgres, git], m('1-3-2014'), [miguel, garth, simon, dan, tom, catherine, ahmed], 'Latest digital call recording platform from BSL'),
             new Project('Digivoice', [angular, redis, git], m('1-11-2012'), [miguel, garth, dan, catherine], 'This digital call recording platform provides an objective record of inbound and outbound phone activity which can be used to develop your team’s telephone communication skills.  It helps to identify areas where there is a clear training or coaching need as well as assessing the effectiveness of the system as a whole.','https://www.digivoice.co.uk'),
             new Project('CODES', [aspnet, wpf, sql, svn], m('1-10-2012'),[miguel, catherine], 'Tailored recording applications relevant to the police and associated law enforcement agencies, Business Systems have developed the next generation of interview and evidence recording technology, incorporating digital audio and video - suitable for those organisations which require secure and accurate evidence as part of their interview process.'),
@@ -133,21 +143,15 @@ angular.module('kamaydApp')
         ];
         //companies
         var companies = [
-            new Company('Business Systems', 'BSL', 'London, United Kingdom', m('19-03-2013'), m('2-01-2015'), 'Senior Software Developer', 'http://www.businesssystemsuk.co.uk/', [new ImgLink('si-linkedin', 'https://www.linkedin.com/company/business-systems-uk-ltd'), new ImgLink('si-twitter','https://twitter.com/BSLHQ'), new ImgLink('si-facebook', 'https://www.facebook.com/businessystemsuk')],  projects)
+            new Company('Business Systems', 'BSL', 'London, United Kingdom', m('19-03-2013'), m('2-01-2015'), 'Senior Software Developer', 'http://www.businesssystemsuk.co.uk/', [new ImgLink('si-linkedin', 'https://www.linkedin.com/company/business-systems-uk-ltd'), new ImgLink('si-twitter','https://twitter.com/BSLHQ'), new ImgLink('si-facebook', 'https://www.facebook.com/businessystemsuk')],  projectsBSL)
         ];
-
-        var skills = [  angular, grunt, bower, sass, npm,
-                        nancy, aspnet,
-                        postgres, redis, sql,
-                        git, svn,
-                        wpf];
 
         var service = {
             getSkills: function () {
-                return skills;
+                return Skill.prototype.all;
             },
             getProjects: function () {
-                return projects;
+                return Project.prototype.all;
             },
             getCategories: function () {
                 return categories;
@@ -156,10 +160,10 @@ angular.module('kamaydApp')
                 return companies;
             },
             findSkill:function(name){
-                return _.find(skills, {'name': name});
+                return _.find(this.getSkills(), {'name': name});
             },
             findProject:function(name){
-                return _.find(projects, {'name': name});
+                return _.find(this.getProjects(), {'name': name});
             }
         };
         return service;
