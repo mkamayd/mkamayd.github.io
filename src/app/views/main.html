@@ -75,15 +75,13 @@
             <div ng-repeat="company in companies">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <span class="glyphicon glyphicon-briefcase"></span>
-                        <strong>{{company.name}}</strong>
+                        <img id="{{company.shortName}}">
                         <mgk-interval class="pull-right" start-date="company.startDate" end-date="company.endDate"></mgk-interval>
-
                     </div>
                     <div class="panel-body">
                         <p>{{company.role}} at
                             <a ng-href="{{company.url}}">
-                                <img id="{{company.shortName}}">
+                                <strong>{{company.name}}</strong>
                             </a>
                         </p>
                         <p>
