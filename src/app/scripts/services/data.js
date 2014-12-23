@@ -35,13 +35,14 @@ angular.module('kamaydApp')
                 }
             );
         }
-        function Skill(name, url, info, isWeaponOfChoice){
+        function Skill(name, url, info, isWeaponOfChoice, shortName){
             this.name = name;
             this.url = url;
             this.info = info;
             this.weapon = isWeaponOfChoice || false;
             this.projects = [];
             this.category = this.emptyCategory;
+            this.shortName = shortName || name;
             if(!_.contains(this.all, this))
             {
                 this.all.push(this);
@@ -107,7 +108,7 @@ angular.module('kamaydApp')
             npm = new Skill('Npm', 'https://www.npmjs.com/', 'The Package manager for JavaScript', true),
 
             nancy  = new Skill('NancyFx', 'http://nancyfx.org/', 'Lightweight, low-ceremony, framework for building HTTP based services on .Net and Mono.', true),
-            aspnet = new Skill('ASP.NET MVC', 'http://www.asp.net/mvc', 'MVC WEB framework.', true),
+            aspnet = new Skill('ASP.NET MVC', 'http://www.asp.net/mvc', 'MVC WEB framework.', true, 'mvc'),
 
             postgres = new Skill('Postgres', 'http://www.postgresql.org/', 'A Powerful, open source object-relational database system.', true),
             redis = new Skill('Redis', 'http://redis.io/', 'It is often referred to as a data structure server.', true),

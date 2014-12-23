@@ -18,21 +18,26 @@
                                     {{skill.name}}
                                 </a>
                                 <div ng-show="selectedSkill===skill" class="well well-sm">
-                                    <h3>
-                                        <span ng-show="selectedSkill.weapon" class="glyphicon glyphicon-screenshot"></span>
-                                        {{selectedSkill.name}}
-                                    </h3>
-                                    <p>{{selectedSkill.info}}</p>
-                                    <p>External info about {{selectedSkill.name}} can be found <a ng-href="{{selectedSkill.url}}">here</a>.</p>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <p>
+                                                <em>{{selectedSkill.info}}</em>
+                                            </p>
+                                            <p>External info about {{selectedSkill.name}} can be found <a ng-href="{{selectedSkill.url}}">here</a>.</p>
 
-                                    <p ng-show="selectedSkill.projects.length">
-                                        I used {{selectedSkill.name}} in the followings projects
-                                    <ul>
-                                        <li ng-repeat="project in selectedSkill.projects">
-                                            <a class="btn btn-default btn-xs" ui-sref="projects({selected:project.name})">{{project.name}}</a>
-                                        </li>
-                                    </ul>
-                                    </p>
+                                            <p ng-show="selectedSkill.projects.length">
+                                                I used {{selectedSkill.name}} in the followings projects
+                                            <ul>
+                                                <li ng-repeat="project in selectedSkill.projects">
+                                                    <a class="btn btn-default btn-xs" ui-sref="projects({selected:project.name})">{{project.name}}</a>
+                                                </li>
+                                            </ul>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div id="{{selectedSkill.shortName}}" class="skill pull-right"/>
+                                        </div>
+                                    </div>
                                 </div>
                             </li>
                             <p ng-hide="filteredSkills.length" class="text-center">No element to show.</p>

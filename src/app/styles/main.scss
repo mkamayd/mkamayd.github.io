@@ -90,55 +90,116 @@ body {
     border-bottom: 0;
   }
 }
+/*persons*/
+.person{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/members.png);
+  background-position: -280px 0;
+}
 
 #migue{
-   width: 40px;
-   height: 40px;
-   background: url(../images/members.png) 0 0;
+   background-position: 0 0;
 }
 #catherine{
-  width: 40px;
-  height: 40px;
-  background: url(../images/members.png) -40px 0;
+  background-position: -40px 0;
 }
 #garth{
-  width: 40px;
-  height: 40px;
-  background: url(../images/members.png) -80px 0;
+  background-position: -80px 0;
 }
 #dan{
-  width: 40px;
-  height: 40px;
-  background: url(../images/members.png) -120px 0;
+  background-position: -120px 0;
 }
 #ahmed{
-  width: 40px;
-  height: 40px;
-  background: url(../images/members.png) -160px 0;
+  background-position: -160px 0;
 }
 #tom{
-  width: 40px;
-  height: 40px;
-  background: url(../images/members.png) -200px 0;
+  background-position: -200px 0;
 }
 #ro{
-   width: 40px;
-   height: 40px;
-   background: url(../images/members.png) -240px 0;
+   background-position: -240px 0;
 }
 #simon{
-  width: 40px;
-  height: 40px;
-  background: url(../images/members.png) -280px 0;
+  background-position: -280px 0;
 }
-#person{
-  width: 40px;
-  height: 40px;
-  background: url(../images/members.png) -280px 0;
+/*companies*/
+.company{
+  position: relative;
+  background-image: url(../images/companies.png);
 }
-
 #BSL{
   width: 158px;
   height: 29px;
-  background: url(../images/companies.png) 0 0;
+  background-position: 0 0;
+}
+/*skills logos*/
+.skill{
+  position: relative;
+  background-image: url(../images/logos.png);
+}
+#AngularJS{
+  width: 180px;
+  height: 47px;
+  background-position: 0 0;
+}
+#Grunt{
+  width: 48px;
+  height: 62px;
+  background-position: -271px 0;
+}
+#Bower{
+ width: 85px;
+ height: 76px;
+ background-position: -180px 0;
+}
+#Sass{
+  width: 137px;
+  height: 104px;
+  background-position: -498px 0;
+}
+#Npm{
+  width: 145px;
+  height: 57px;
+  background-position: 0 -47px;
+}
+#NancyFx{
+  width: 61px;
+  height: 67px;
+  background-position: -415px -52px;
+}
+#mvc{
+  width: 144px;
+  height: 60px;
+  background-position: -256px -90px;
+}
+#Postgres{
+ width: 93px;
+ height: 92px;
+ background-position: -154px -83px;
+}
+#Redis{
+  width: 161px;
+  height: 52px;
+  background-position: -329px 0;
+}
+#SQL{
+  width: 208px;
+  height: 89px;
+  background-position: -477px -106px;
+}
+#SVN{
+   width: 41px;
+   height: 36px;
+   background-position: -415px -119px;
+}
+#GIT{
+  width: 78px;
+  height: 34px;
+  background-position: -332px -54px;
+}
+#WPF{
+  width: 146px;
+  height: 57px;
+  background-position:  0 -103px;
 }
