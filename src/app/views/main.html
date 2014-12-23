@@ -76,17 +76,17 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <img id="{{company.shortName}}" src="images/companies.png" alt="{{company.shortName}}'s picture.">
-                        <mgk-interval class="pull-right" start-date="company.startDate" end-date="company.endDate"></mgk-interval>
                     </div>
                     <div class="panel-body">
+                        <mgk-interval class="text-right" start-date="company.startDate" end-date="company.endDate"></mgk-interval>
+                        <p class="text-right">
+                            <span class="glyphicon glyphicon-map-marker"></span>
+                            {{company.location}}
+                        </p>
                         <p>{{company.role}} at
                             <a ng-href="{{company.url}}">
                                 <strong>{{company.name}}</strong>
                             </a>
-                        </p>
-                        <p>
-                            <span class="glyphicon glyphicon-map-marker"></span>
-                            {{company.location}}
                         </p>
                         <p>
                             <strong>My Projects at {{company.name}}</strong>
