@@ -89,6 +89,27 @@
                                 <strong>{{company.name}}</strong>
                             </a>
                         </p>
+                        <p ng-show="company.team.length">
+                            The team:
+                                <a ng-click="showMembers=true" ng-hide="showMembers">
+                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                </a>
+                                <a ng-click="showMembers=false" ng-show="showMembers">
+                                    <span class="glyphicon glyphicon-eye-close"></span>
+                                </a>
+                            <ul ng-show="showMembers" class="media-list">
+                                <li class="media" ng-repeat="person in company.team">
+                                        <span class="pull-left">
+                                            <img id="{{person.shortName}}" class="person"/>
+                                        </span>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">{{person.name}}</h4>
+                                        <strong>{{person.title}}</strong>
+                                        <a title="BSL LinkedIn" class="si-circle si-medium si-colored si-linkedin" ng-href="{{person.linkedInURL}}"></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </p>
                         <p>
                             <strong>My Projects at {{company.name}}</strong>
                             <center>

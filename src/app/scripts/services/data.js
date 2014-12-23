@@ -19,7 +19,7 @@ angular.module('kamaydApp')
                 }
             );
         }
-        function Company(name, shortName, location, startDate, endDate, role, url, socialLinks, projects){
+        function Company(name, shortName, location, startDate, endDate, role, url, socialLinks, projects, team){
             this.name = name;
             this.shortName = shortName;
             this.location = location;
@@ -30,6 +30,7 @@ angular.module('kamaydApp')
             this.socialLinks = socialLinks;
             var thisCompany = this;
             this.projects = projects;
+            this.team = team || [];
             _(projects).forEach(function(project) {
                     project.setCompany(thisCompany);
                 }
@@ -98,7 +99,14 @@ angular.module('kamaydApp')
             this.title = title;
             this.shortName = shortName || 'person';
             this.linkedInURL = linkedInURL;
+            if(!_.contains(this.all, this))
+            {
+                this.all.push(this);
+            }
         }
+        Person.prototype = {
+            all:[]
+        };
 
         //skills
         var angular = new Skill('AngularJS', 'https://angularjs.org/', 'Angular is what HTML would have been had it been designed for applications', true),
@@ -144,7 +152,7 @@ angular.module('kamaydApp')
         ];
         //companies
         var companies = [
-            new Company('Business Systems', 'BSL', 'London, United Kingdom', m('19-03-2013'), m('2-01-2015'), 'Senior Software Developer', 'http://www.businesssystemsuk.co.uk/', [new ImgLink('si-linkedin', 'https://www.linkedin.com/company/business-systems-uk-ltd'), new ImgLink('si-twitter','https://twitter.com/BSLHQ'), new ImgLink('si-facebook', 'https://www.facebook.com/businessystemsuk')],  projectsBSL)
+            new Company('Business Systems', 'BSL', 'London, United Kingdom', m('19-03-2013'), m('2-01-2015'), 'Senior Software Developer', 'http://www.businesssystemsuk.co.uk/', [new ImgLink('si-linkedin', 'https://www.linkedin.com/company/business-systems-uk-ltd'), new ImgLink('si-twitter','https://twitter.com/BSLHQ'), new ImgLink('si-facebook', 'https://www.facebook.com/businessystemsuk')],  projectsBSL , Person.prototype.all)
         ];
 
         var service = {
@@ -159,6 +167,9 @@ angular.module('kamaydApp')
             },
             getCompanies: function(){
                 return companies;
+            },
+            getPersons: function () {
+                return Person.prototype.all;
             },
             findSkill:function(name){
                 return _.find(this.getSkills(), {'name': name});
