@@ -6,14 +6,14 @@
         <div class="panel-body">
             <div class="input-group">
                 <input type="checkbox" ng-model="filter.onlyWeapons"> Only show Weapons of Choice <span class="glyphicon glyphicon-screenshot"></span>
-                <ui-select ng-model="selected.skill" theme="bootstrap" style="width: 300px;">
-                    <ui-select-match placeholder="Search Skill">{{$select.selected.name}}</ui-select-match>
-                    <ui-select-choices repeat="skill in skills | filter: skillFilter | filter:{name: $select.search}">
-                        <span ng-show="skill.weapon" class="glyphicon glyphicon-screenshot"></span>
-                        <span ng-bind-html="skill.name | highlight: $select.search"></span>
-                    </ui-select-choices>
-                </ui-select>
             </div>
+            <ui-select ng-model="selected.skill" theme="bootstrap" style="width: 100%;">
+                <ui-select-match placeholder="Search Skill">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="skill in skills | filter: skillFilter | filter:{name: $select.search}">
+                    <span ng-show="skill.weapon" class="glyphicon glyphicon-screenshot"></span>
+                    <span ng-bind-html="skill.name | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
             <div class="row">
                 <div class="col-sm-12">
                     <div ng-repeat="category in categories">
