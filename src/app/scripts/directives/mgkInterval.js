@@ -1,4 +1,5 @@
 'use strict';
+/*global moment*/
 
 /**
  * @ngdoc directive
@@ -22,7 +23,7 @@ angular.module('kamaydApp')
                     '</em>' +
                 '</div>',
       restrict: 'E',
-      link: function postLink(scope, element, attrs) {
+      link: function postLink(scope, element) {
           var timeoutId;
           if(angular.isUndefined(scope.endDate))
           {
