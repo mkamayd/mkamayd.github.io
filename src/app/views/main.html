@@ -69,7 +69,7 @@
             </p>
             <p>
                 <strong>Navigate to Skill</strong>
-                <ui-select ng-model="selected.skill" theme="bootstrap" on-select="navigate($model)" style="width: 100%;">
+                <ui-select ng-model="selected.skill" on-select="navigate($model)" style="width: 100%;">
                     <ui-select-match placeholder="Navigate to Skill">{{$select.selected.name}}</ui-select-match>
                     <ui-select-choices repeat="skill in skills | filter:{name: $select.search}">
                         <span ng-show="skill.weapon" class="glyphicon glyphicon-screenshot"></span>
