@@ -6,7 +6,8 @@ angular
     'ngResource',
     'ngSanitize',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'ui.select',
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
