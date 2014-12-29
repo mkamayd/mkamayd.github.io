@@ -27,6 +27,17 @@ For Firefox 3.6, you will also need to include jQuery and ECMAScript 5 shim
        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
        ga('create', 'UA-57635802-1');
-       ga('send', 'pageview');</script> <!--[if lt IE 9]>
+       ga('send', 'pageview');</script> <script id="bootstrap/match.tpl.html" type="text/ng-template"><div class="btn-group ui-select-match" ng-hide="$select.open" ng-disabled="$select.disabled" ng-class="{'btn-default-focus':$select.focus}">
+            <button class="btn btn-default" ng-if="$select.allowClear && !$select.isEmpty()" ng-click="$select.select(undefined)">
+                <span class="glyphicon glyphicon-remove ui-select-toggle"></span>
+            </button>
+            <button type="button" class="btn btn-default" tabindex="-1" ng-click="$select.activate()">
+                <span ng-show="$select.isEmpty()" class="text-muted">{{$select.placeholder}}</span>
+                <span ng-hide="$select.isEmpty()" ng-transclude=""></span>
+            </button>
+            <button class="btn btn-default" ng-click="$select.activate()">
+                <span class="caret ui-select-toggle" ng-click="$select.toggle($event)"></span>
+            </button>
+        </div></script> <!--[if lt IE 9]>
     <script src="scripts/oldieshim.76f279db.js"></script>
     <![endif]--> <script src="scripts/vendor.46a7c8d4.js"></script> <script src="scripts/scripts.8b3108e1.js"></script>  
