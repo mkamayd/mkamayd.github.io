@@ -132,19 +132,22 @@ module.exports = function (grunt) {
 
     // Empties folders to start fresh
     clean: {
-      dist: {
-        files: [{
-          dot: true,
-          src: [
-            '.tmp',
-            '<%= yeoman.dist %>/{,*/}*',
-            '!<%= yeoman.dist %>/.git{,*/}*',
-            '!<%= yeoman.dist %>/src{,*/}*',
-            '!<%= yeoman.dist %>/README.md',
-            '!<%= yeoman.dist %>/LICENSE',
-            '!<%= yeoman.dist %>/google638e8f2cb8e5d7d4.html'
-          ]
-        }]
+        dist: {
+            options: {
+                force: true
+            },
+            files: [{
+              dot: true,
+              src: [
+                '.tmp',
+                '<%= yeoman.dist %>/{,*/}*',
+                '!<%= yeoman.dist %>/.git{,*/}*',
+                '!<%= yeoman.dist %>/src{,*/}*',
+                '!<%= yeoman.dist %>/README.md',
+                '!<%= yeoman.dist %>/LICENSE',
+                '!<%= yeoman.dist %>/google638e8f2cb8e5d7d4.html'
+              ]
+            }]
       },
       server: '.tmp'
     },
