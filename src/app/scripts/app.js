@@ -25,13 +25,19 @@ angular
                 controller: 'SkillsCtrl',
                 templateUrl: 'views/skills.html'
             })
-            .state('projects', {
-                url: '/projects',
+            .state('experience', {
+                url: '/experience',
                 params: {
                     selected: { value: 'WordWatch v5' }
                 },
-                controller: 'ProjectsCtrl',
-                templateUrl: 'views/projects.html'
+                controller: 'ExperienceCtrl',
+                templateUrl: 'views/experience.html'
+            })
+            .state('recomendations', {
+                url: '/recomendations',
+                controller: 'RecomendationsCtrl',
+                templateUrl: 'views/recomendations.html'
+
             })
             .state('about', {
                 url: '/about',

@@ -1,0 +1,19 @@
+<div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <span class="glyphicon glyphicon-thumbs-up"></span>
+            Recomendations
+        </div>
+        <div class="panel-body">
+            <blockquote ng-repeat="recomendation in recomendations">
+                <h4 class="media-heading">{{recomendation.person.name}}</h4>
+                <img id="{{recomendation.person.shortName}}" class="person" />
+                <a title="BSL LinkedIn" class="si-circle si-medium si-colored si-linkedin" ng-href="{{recomendation.person.linkedInURL}}"></a>
+                <div><strong>{{recomendation.person.title}}</strong></div>
+                <p><strong>"</strong> {{recomendation.text}}<strong>"</strong></p>
+                <footer>{{recomendation.person.name}} at <cite title="Source Title">{{recomendation.company.name}}</cite></footer>
+            </blockquote>
+            <p class="pull-right">More references are available upon request.</p>
+        </div>
+    </div>
+</div>
