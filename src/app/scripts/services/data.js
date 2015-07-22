@@ -4,10 +4,10 @@
 angular.module('kamaydApp')
     .factory('data', function data() {
         function m(date) {
-            if (date)
+            if (date){
                 return moment(date, 'DD-MM-YYYY');
-            else
-                return moment();
+            }
+            return moment();
         }
         function ImgLink(className, url){
             this.className = className;
@@ -112,7 +112,7 @@ angular.module('kamaydApp')
         function Member(person, title) {
             _.defaults(this, person);
             this.position = title;
-        };
+        }
 
         function Education(location, startDate, endDate) {
             this.location = location;
