@@ -103,6 +103,19 @@ body {
   }
 }
 
+.nav-justified {
+   > li {
+     float: left;
+   }
+ }
+ 
+ @media (min-width: $screen-sm-min) {
+    .nav-justified {
+   > li {
+     float: none;
+   }
+ }
+}
 
 
 /*persons*/
