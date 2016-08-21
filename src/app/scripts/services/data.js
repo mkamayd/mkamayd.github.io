@@ -170,11 +170,14 @@ angular.module('kamaydApp')
             ahmed = new Person('Ahmed Yaslem', 'ahmed', 'https://www.linkedin.com/in/ayaslem'),
             tom = new Person('Thomas Mutton', 'tom', 'https://www.linkedin.com/in/tmutton1'),
             ro = new Person('Rohan Mohindra', 'ro', 'https://www.linkedin.com/pub/rohan-mohindra/37/7a9/890'),
-            simon = new Person('Simon Bill', 'simon', 'https://www.linkedin.com/pub/simon-bill/12/6b/b92');
+            simon = new Person('Simon Bill', 'simon', 'https://www.linkedin.com/pub/simon-bill/12/6b/b92'),
+            gaurav = new Person('Gaurav Aurora', 'anoymus', 'https://www.linkedin.com/in/gaurav-arora-2405338'),
+            banu = new Person('Banumathi Sureshbabu', 'anoymus', 'https://www.linkedin.com/in/banumathi-sureshbabu-itilv3-93b73723');
 
         //member
         var mMiguelSrSoft = new Member(miguel, 'Senior Software Developer'),
             mMiguelSrWeb = new Member(miguel, 'Senior Web Developer Consultant'),
+        mBanu = new Member(banu, 'Senior Web Developer'),
             mMiguelDev = new Member(miguel, 'Software Developer'),
             mCatherine = new Member(catherine, 'Lead Systems Tester'),
             mGarth = new Member(garth, 'Software Development Manager'),
@@ -182,15 +185,16 @@ angular.module('kamaydApp')
             mAhmed = new Member(ahmed, 'Systems Tester'),
             mTom = new Member(tom, 'Jr Software Developer'),
             mRo = new Member(ro, 'Inside Pre-Sales Consultant'),
-            mSimon = new Member(simon, 'Lead Developer');
+            mSimon = new Member(simon, 'Lead Developer'),
+            mGaurav = new Member(gaurav, 'Lead Developer');
        
         //projects
         var projectCarnival =[
-            new Project('SEAMS', [jquery, angular, xunit, aspnet, sass, sitecore, git], m('27-07-2015'), [mMiguelSrSoft], 'Internal tool for scheduling and managing voyage data on the ships.'),
-            new Project('OMS', [ sql, entityFramework, xunit, git], m('01-11-2015'), [mMiguelSrSoft], 'Order Management System. Services that allow selling photos on the ships.'),
-            new Project('Admin UI', [jquery, aspnet, sql, entityFramework, git], m('01-01-2016'), [mMiguelSrSoft], 'Iternal tool for reporting and inventory of photos on the ships.'),
+            new Project('SEAMS', [jquery, angular, xunit, aspnet, sass, sitecore, git], m('27-07-2015'), [mMiguelSrSoft, mGaurav, mBanu], 'Internal tool for scheduling and managing voyage data on the ships.'),
+            new Project('OMS', [ sql, entityFramework, xunit, git], m('01-11-2015'), [mMiguelSrSoft, mGaurav, mBanu], 'Order Management System. Services that allow selling photos on the ships.'),
+            new Project('Admin UI', [jquery, aspnet, sql, entityFramework, git], m('01-01-2016'), [mMiguelSrSoft, mGaurav], 'Iternal tool for reporting and inventory of photos on the ships.'),
             new Project('Pixels', [angular, ionic, npm, grunt, sass, git], m('01-05-2016'), [mMiguelSrSoft], 'Mobile app (IOs, Adroid and big screens) for selling photos to the guests using FR and others ideas.'),
-            new Project('Shorex', [angular, npm, grunt, sass, git], m('19-08-2016'), [mMiguelSrSoft], 'Mobile app (IOs and Adroid) for selling shore excursions to the guests on the ships.')
+            new Project('Shorex', [angular, npm, grunt, sass, git], m('19-08-2016'), [mMiguelSrSoft, mGaurav], 'Mobile app (IOs and Adroid) for selling shore excursions to the guests on the ships.')
         ];
         var projectsBSL = [
             new Project('WordWatch v5', [angular, grunt, xunit, bower, npm, sass, nancy, postgres, git], m('1-3-2014'), [mMiguelSrSoft, mGarth, mSimon, mDan, mTom, mCatherine, mAhmed], 'Latest digital call recording platform from BSL'),
@@ -215,7 +219,7 @@ angular.module('kamaydApp')
             new Category('Version control', [git, svn])
         ];
         //companies
-        var carnival = new Company('Carnival Cruise Lines', 'Carnival', 'Miami, U.S.A', m('27-07-2015'), m(), 'http://www.carnival.com/', [], projectCarnival, [mMiguelSrWeb]);
+        var carnival = new Company('Carnival Cruise Lines', 'Carnival', 'Miami, U.S.A', m('27-07-2015'), m(), 'http://www.carnival.com/', [], projectCarnival, [mMiguelSrWeb, mGaurav, mBanu]);
         var bsl = new Company('Business Systems', 'BSL', 'London, United Kingdom', m('19-03-2013'), m('2-01-2015'), 'http://www.businesssystemsuk.co.uk/', [new ImgLink('si-linkedin', 'https://www.linkedin.com/company/business-systems-uk-ltd'), new ImgLink('si-twitter', 'https://twitter.com/BSLHQ'), new ImgLink('si-facebook', 'https://www.facebook.com/businessystemsuk')], projectsBSL, [mMiguelSrSoft, mCatherine, mGarth, mDan, mAhmed, mTom, mRo, mSimon]);
         var icid = new Company('Central Institute of Digital Research', 'ICID', 'Havana, Cuba', m('1-09-2010'), m('1-09-2012'), 'http://www.ecured.cu/index.php/Instituto_Central_de_Investigaci%C3%B3n_Digital', [], projectsICID, [mMiguelDev]);
 
