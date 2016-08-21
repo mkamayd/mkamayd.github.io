@@ -136,7 +136,13 @@ angular.module('kamaydApp')
         }
 
         //skills
-        var angular = new Skill('AngularJS', 'https://angularjs.org/', 'Angular is what HTML would have been had it been designed for applications', true),
+        //to add: jquery, sitecore, xUnit, ionic, 
+        var angular = new Skill('AngularJS', 'https://angularjs.org/', 'Angular is what HTML would have been had it been designed for applications.', true),
+            jquery = new Skill('jQuery', 'https://jquery.com/', 'jQuery is a fast, small, and feature-rich JavaScript library.', false),
+            sitecore = new Skill('Sitecore CMS', 'http://www.sitecore.net/', 'CMS for customer experience management.', false),
+            xunit = new Skill('xUnit', 'https://xunit.github.io/', 'xUnit.net is a free, open source, community-focused unit testing tool for the .NET Framework.', false),
+            ionic = new Skill('Ionic Framework', 'http://ionicframework.com/', 'A library of mobile-optimized HTML, CSS and JS components and tools for building highly interactive native and progressive web apps.', false),
+            
             grunt = new Skill('Grunt', 'http://gruntjs.com/', 'The JavaScript Task Runner' , true),
             bower = new Skill('Bower', 'http://bower.io/', 'The Package manager for the front-end.' , true),
             sass = new Skill('Sass', 'http://sass-lang.com/', 'A CSS extension language.' , true),
@@ -165,7 +171,7 @@ angular.module('kamaydApp')
             tom = new Person('Thomas Mutton', 'tom', 'https://www.linkedin.com/in/tmutton1'),
             ro = new Person('Rohan Mohindra', 'ro', 'https://www.linkedin.com/pub/rohan-mohindra/37/7a9/890'),
             simon = new Person('Simon Bill', 'simon', 'https://www.linkedin.com/pub/simon-bill/12/6b/b92');
-            
+
         //member
         var mMiguelSrSoft = new Member(miguel, 'Senior Software Developer'),
             mMiguelSrWeb = new Member(miguel, 'Senior Web Developer Consultant'),
@@ -180,17 +186,17 @@ angular.module('kamaydApp')
        
         //projects
         var projectCarnival =[
-            new Project('SEAMS', [angular, aspnet, sass, git], m('27-07-2015'), [mMiguelSrSoft], 'Internal tool for scheduling and managing voyage data on the ships.'),
-            new Project('OMS', [ sql, entityFramework, git], m('01-11-2015'), [mMiguelSrSoft], 'Order Management System. Services that allow selling photos on the ships.'),
-            new Project('Admin UI', [ aspnet, sql, entityFramework, git], m('01-01-2016'), [mMiguelSrSoft], 'Iternal tool for reporting and inventory of photos on the ships.'),
-            new Project('Pixels', [angular, npm, grunt, sass, git], m('01-05-2016'), [mMiguelSrSoft], 'Mobile app (IOs, Adroid and big screens) for selling photos to the guests using FR and others ideas.'),
+            new Project('SEAMS', [jquery, angular, xunit, aspnet, sass, sitecore, git], m('27-07-2015'), [mMiguelSrSoft], 'Internal tool for scheduling and managing voyage data on the ships.'),
+            new Project('OMS', [ sql, entityFramework, xunit, git], m('01-11-2015'), [mMiguelSrSoft], 'Order Management System. Services that allow selling photos on the ships.'),
+            new Project('Admin UI', [jquery, aspnet, sql, entityFramework, git], m('01-01-2016'), [mMiguelSrSoft], 'Iternal tool for reporting and inventory of photos on the ships.'),
+            new Project('Pixels', [angular, ionic, npm, grunt, sass, git], m('01-05-2016'), [mMiguelSrSoft], 'Mobile app (IOs, Adroid and big screens) for selling photos to the guests using FR and others ideas.'),
             new Project('Shorex', [angular, npm, grunt, sass, git], m('19-08-2016'), [mMiguelSrSoft], 'Mobile app (IOs and Adroid) for selling shore excursions to the guests on the ships.')
         ];
         var projectsBSL = [
-            new Project('WordWatch v5', [angular, grunt, bower, npm, sass, nancy, postgres, git], m('1-3-2014'), [mMiguelSrSoft, mGarth, mSimon, mDan, mTom, mCatherine, mAhmed], 'Latest digital call recording platform from BSL'),
+            new Project('WordWatch v5', [angular, grunt, xunit, bower, npm, sass, nancy, postgres, git], m('1-3-2014'), [mMiguelSrSoft, mGarth, mSimon, mDan, mTom, mCatherine, mAhmed], 'Latest digital call recording platform from BSL'),
             //new Project('Nats', [aspnet,wpf, svn], m('1-1-2013'), [mMiguelSrSoft, mGarth, mDan, mCatherine], 'nats interal project'),
-            new Project('Digivoice', [angular, redis, git], m('1-11-2012'), [mMiguelSrSoft, mGarth, mDan, mCatherine], 'This digital call recording platform provides an objective record of inbound and outbound phone activity which can be used to develop your team’s telephone communication skills.  It helps to identify areas where there is a clear training or coaching need as well as assessing the effectiveness of the system as a whole.', 'https://www.digivoice.co.uk'),
-            new Project('CODES', [aspnet, wpf, sql, svn], m('1-10-2012'), [mMiguelSrSoft, mGarth, mCatherine], 'CODES is an interview recording product incorporating audio and video recording used by organisations conducting investigative interviews for evidence gathering. In the world of law enforcement, commercial investigations and disciplinary hearings audio&video recordings provide an accurate and impartial record to benefit all parties.'),
+            new Project('Digivoice', [angular, xunit, redis, git], m('1-11-2012'), [mMiguelSrSoft, mGarth, mDan, mCatherine], 'This digital call recording platform provides an objective record of inbound and outbound phone activity which can be used to develop your team’s telephone communication skills.  It helps to identify areas where there is a clear training or coaching need as well as assessing the effectiveness of the system as a whole.', 'https://www.digivoice.co.uk'),
+            new Project('CODES', [aspnet, wpf, xunit, sql, svn], m('1-10-2012'), [mMiguelSrSoft, mGarth, mCatherine], 'CODES is an interview recording product incorporating audio and video recording used by organisations conducting investigative interviews for evidence gathering. In the world of law enforcement, commercial investigations and disciplinary hearings audio&video recordings provide an accurate and impartial record to benefit all parties.'),
             new Project('Callcraft', [sql, svn], m('1-1-2013'), [mMiguelSrSoft, mGarth, mDan, mRo, mCatherine], 'OPEX Callcraft provides hosted telephony applications for general businesses and contact centres thereby relieving you of the need to install and maintain expensive capital equipment on your own premises.', 'http://www.opexhosting.co.uk/')
         ];
         var projectsICID = [
@@ -198,12 +204,14 @@ angular.module('kamaydApp')
          new Project('Continuous Monitoring of ECG signal', [aspnet, wpf, sql, svn], m('1-05-2011'), [mMiguelDev], 'A system for monitoring the electrocardiogram signal of a patient, while he performs normal life activities in order to make an accurate diagnosis. It consists of a device that captures ECG signal directly from the patient and sends it to his smartphone. The application on the phone can show that data like in an ECG graph paper, classify the signal and sends it to a server. It also has a website in which the obtained signal is analyzed by medical specialists who can diagnose and treat the patient by sending information back to his smartphone and a desktop application where the data in the smartphone can be upload and analyzed without the need of ever be send to the server mentioned before.')
         ];
         //categories
+          
         var categories = [
-            new Category('Client Side', [angular, grunt, bower, sass, npm]),
-            new Category('Server Side', [nancy, aspnet]),
+            new Category('Client Side', [angular, ionic, jquery, grunt, bower, sass, npm]),
+            new Category('Server Side', [nancy, aspnet, sitecore]),
             new Category('Data Base', [postgres, redis, sql]),
             new Category('ORM', [entityFramework]),
             new Category('Windows Applications', [wpf]),
+            new Category('TDD', [xunit]),
             new Category('Version control', [git, svn])
         ];
         //companies
