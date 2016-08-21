@@ -165,6 +165,7 @@ angular.module('kamaydApp')
             tom = new Person('Thomas Mutton', 'tom', 'https://www.linkedin.com/in/tmutton1'),
             ro = new Person('Rohan Mohindra', 'ro', 'https://www.linkedin.com/pub/rohan-mohindra/37/7a9/890'),
             simon = new Person('Simon Bill', 'simon', 'https://www.linkedin.com/pub/simon-bill/12/6b/b92');
+            
         //member
         var mMiguelSrSoft = new Member(miguel, 'Senior Software Developer'),
             mMiguelSrWeb = new Member(miguel, 'Senior Web Developer Consultant'),
@@ -176,8 +177,15 @@ angular.module('kamaydApp')
             mTom = new Member(tom, 'Jr Software Developer'),
             mRo = new Member(ro, 'Inside Pre-Sales Consultant'),
             mSimon = new Member(simon, 'Lead Developer');
-
+       
         //projects
+        var projectCarnival =[
+            new Project('SEAMS', [angular, aspnet, sass, git], m('27-07-2015'), [mMiguelSrSoft], 'Internal tool for scheduling and managing voyage data on the ships.'),
+            new Project('OMS', [ sql, entityFramework, git], m('01-11-2015'), [mMiguelSrSoft], 'Order Management System. Services that allow selling photos on the ships.'),
+            new Project('Admin UI', [ aspnet, sql, entityFramework, git], m('01-01-2016'), [mMiguelSrSoft], 'Iternal tool for reporting and inventory of photos on the ships.'),
+            new Project('Pixels', [angular, npm, grunt, sass, git], m('01-05-2016'), [mMiguelSrSoft], 'Mobile app (IOs, Adroid and big screens) for selling photos to the guests using FR and others ideas.'),
+            new Project('Shorex', [angular, npm, grunt, sass, git], m('19-08-2016'), [mMiguelSrSoft], 'Mobile app (IOs and Adroid) for selling shore excursions to the guests on the ships.')
+        ];
         var projectsBSL = [
             new Project('WordWatch v5', [angular, grunt, bower, npm, sass, nancy, postgres, git], m('1-3-2014'), [mMiguelSrSoft, mGarth, mSimon, mDan, mTom, mCatherine, mAhmed], 'Latest digital call recording platform from BSL'),
             //new Project('Nats', [aspnet,wpf, svn], m('1-1-2013'), [mMiguelSrSoft, mGarth, mDan, mCatherine], 'nats interal project'),
@@ -199,9 +207,9 @@ angular.module('kamaydApp')
             new Category('Version control', [git, svn])
         ];
         //companies
+        var carnival = new Company('Carnival Cruise Lines', 'Carnival', 'Miami, U.S.A', m('27-07-2015'), m(), 'http://www.carnival.com/', [], projectCarnival, [mMiguelSrWeb]);
         var bsl = new Company('Business Systems', 'BSL', 'London, United Kingdom', m('19-03-2013'), m('2-01-2015'), 'http://www.businesssystemsuk.co.uk/', [new ImgLink('si-linkedin', 'https://www.linkedin.com/company/business-systems-uk-ltd'), new ImgLink('si-twitter', 'https://twitter.com/BSLHQ'), new ImgLink('si-facebook', 'https://www.facebook.com/businessystemsuk')], projectsBSL, [mMiguelSrSoft, mCatherine, mGarth, mDan, mAhmed, mTom, mRo, mSimon]);
         var icid = new Company('Central Institute of Digital Research', 'ICID', 'Havana, Cuba', m('1-09-2010'), m('1-09-2012'), 'http://www.ecured.cu/index.php/Instituto_Central_de_Investigaci%C3%B3n_Digital', [], projectsICID, [mMiguelDev]);
-        var carnival = new Company('Carnival Cruise Lines', 'Carnival', 'Miami, U.S.A', m('27-07-2015'), m(), 'http://www.carnival.com/', [], [], [mMiguelSrWeb]);
 
         var companies = [carnival, bsl, icid];
 
@@ -216,7 +224,8 @@ angular.module('kamaydApp')
 
         //courses
         var courses = [
-            new Course('Mark Rendle\'s Single Page Applications with Angular JS & .NET', 'London, UK', m('2-10-2013'), m('5-10-2013'), 'TDD, Angular JS, Typescript & .Net workshop', [new ImgLink('si-linkedin', 'https://www.linkedin.com/in/markrendle'), new ImgLink('si-twitter', 'https://twitter.com/markrendle'), new ImgLink('si-github', 'https://github.com/markrendle')])
+            new Course('Mark Rendle\'s Single Page Applications with Angular JS & .NET', 'London, UK', m('2-10-2013'), m('5-10-2013'), 'TDD, Angular JS, Typescript & .Net workshop', [new ImgLink('si-linkedin', 'https://www.linkedin.com/in/markrendle'), new ImgLink('si-twitter', 'https://twitter.com/markrendle'), new ImgLink('si-github', 'https://github.com/markrendle')]),
+            new Course('ForwardJS conference + 2 Workshops', 'San Francisco, California, USA', m('28-07-2016'), m('31-07-2016'), 'Extreme Web Performance by Max Firtman and Deep Dive into Angular 2 by Aysegul Yonet.', [new ImgLink('si-github', 'https://github.com/firtman'),new ImgLink('si-github', 'https://github.com/yonet') ])
         ];
 
         var service = {
