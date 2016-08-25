@@ -28,7 +28,7 @@ angular
             .state('experience', {
                 url: '/experience',
                 params: {
-                    selected: { value: 'WordWatch v5' }
+                    selected: { value: 'Pixels' }
                 },
                 controller: 'ExperienceCtrl',
                 templateUrl: 'views/experience.html'
