@@ -2,7 +2,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 $nav-tabs-active-link-hover-bg:  #f5f5f5 !default;
 $nav-tabs-justified-active-link-border-color: $nav-tabs-active-link-hover-bg;
 // bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
 // endbower
 
 .browsehappy {
@@ -154,6 +154,9 @@ body {
 #simon{
   background-position: -320px 0;
 }
+#jody{
+  background-position: -360px 0;
+}
 /*companies*/
 .company{
   position: relative;
@@ -168,6 +171,11 @@ body {
   width: 90px;
   height: 30px;
   background-position: 0 -31px;
+}
+#Pooler{
+  width: 122px;
+  height: 30px;
+  background-position: 130px -31px;
 }
 #Carnival{
   width: 115px;

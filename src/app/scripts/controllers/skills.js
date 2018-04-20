@@ -6,7 +6,7 @@ angular.module('kamaydApp')
      $scope.skills = data.getSkills();
      $scope.selected = {skill : data.findSkill($stateParams.selected) || $scope.categories[0].skills[0]};
      $scope.filter = {
-         onlyWeapons : $scope.selected.skill.weapon
+         onlyWeapons : false
      };
      $scope.selectSkill = function(skill){
          if($scope.selected.skill === skill){

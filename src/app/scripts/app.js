@@ -28,7 +28,7 @@ angular
             .state('experience', {
                 url: '/experience',
                 params: {
-                    selected: { value: 'Pixels' }
+                    selected: { value: 'Pooler App' }
                 },
                 controller: 'ExperienceCtrl',
                 templateUrl: 'views/experience.html'
